@@ -1,23 +1,19 @@
-import {
-	createBrowserRouter,
-	createRoutesFromElements,
-	// Link,
-	Route,
-	RouterProvider
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { HomePage } from '@pages/homePage';
+import { NotFoundPage } from '@pages/notFoundPage';
 
 export const AppRouter = () => {
-	const routes = createRoutesFromElements(
-		<Route
-			path="/"
-			element={<HomePage />}
-			// errorElement={<Fallback />}
-		></Route>
-	);
-
-	const router = createBrowserRouter(routes);
+	const router = createBrowserRouter([
+		{
+			path: '/',
+			element: <HomePage />
+		},
+		{
+			path: '*',
+			element: <NotFoundPage />
+		}
+	]);
 
 	return <RouterProvider router={router} />;
 };
