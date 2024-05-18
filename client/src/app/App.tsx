@@ -1,10 +1,10 @@
-import { Button } from '@/components/ui/button';
+import { AppRouter } from './routers';
 
 const App = () => {
 	return (
-		<div>
-			<Button>Click me</Button>
-		</div>
+		<>
+			<AppRouter />
+		</>
 	);
 };
 export default App;
