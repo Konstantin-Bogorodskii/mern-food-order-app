@@ -3,23 +3,21 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from '@app/layout';
 
 import { HomePage } from '@pages/homePage';
-import { NotFoundPage } from '@pages/notFoundPage';
+
+import { Fallback } from '@shared/ui/fallback';
 
 export const AppRouter = () => {
 	const router = createBrowserRouter([
 		{
 			path: '/',
 			element: <Layout />,
+			errorElement: <Fallback />,
 			children: [
 				{
 					index: true,
 					element: <HomePage />
 				}
 			]
-		},
-		{
-			path: '*',
-			element: <NotFoundPage />
 		}
 	]);
 

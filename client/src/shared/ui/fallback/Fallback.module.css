@@ -1,0 +1,36 @@
+.fallback {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.img {
+	max-height: 180px;
+}
+
+.title {
+	padding: 10px;
+	font-size: 22px;
+}
+
+.describe {
+	padding: 10px;
+	font-size: 18px;
+}
+
+.link {
+	color: var(--text-primary);
+	padding: 10px;
+}
+
+.link:hover {
+	color: red;
+}
+
+.link:active {
+	color: darkred;
+}
