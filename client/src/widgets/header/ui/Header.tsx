@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MobileNav } from '@entities/mobileNav/ui/MobileNav';
+import { MainNav, MobileNav } from '@/entities/nav';
 
 export const Header: React.FC = () => {
 	return (
@@ -13,6 +13,10 @@ export const Header: React.FC = () => {
 
 				<div className="md:hidden">
 					<MobileNav />
+				</div>
+
+				<div className="hidden md:block">
+					<MainNav />
 				</div>
 			</div>
 		</header>

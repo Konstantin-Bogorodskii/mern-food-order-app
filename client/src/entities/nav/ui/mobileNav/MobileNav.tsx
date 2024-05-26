@@ -3,9 +3,7 @@ import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription } from 
 import { Separator } from '@shared/ui/separator';
 import { Button } from '@shared/ui/button';
 
-interface Props {}
-
-export const MobileNav: React.FC<Props> = () => {
+export const MobileNav: React.FC = () => {
 	return (
 		<Sheet>
 			<SheetTrigger>
