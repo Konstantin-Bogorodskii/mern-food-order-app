@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { MobileNav } from '@entities/mobileNav/ui/MobileNav';
 
 export const Header: React.FC = () => {
 	return (
@@ -9,6 +10,10 @@ export const Header: React.FC = () => {
 					className="text-3xl font-bold tracking-tight text-orange-500">
 					MernEats.com
 				</Link>
+
+				<div className="md:hidden">
+					<MobileNav />
+				</div>
 			</div>
 		</header>
 	);
