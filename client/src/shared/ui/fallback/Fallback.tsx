@@ -1,5 +1,5 @@
 import { Link, useRouteError } from 'react-router-dom';
-import ErrorImage from '@shared/assets/images/errorImage.svg?react';
+import ErrorIcon from '@shared/assets/icons/errorIcon.svg?react';
 import { RejectedDataType } from '@shared/types';
 
 import classes from './Fallback.module.css';
@@ -12,7 +12,7 @@ export const Fallback = () => {
 		<div
 			role="alert"
 			className={classes.fallback}>
-			<ErrorImage className={classes.img} />
+			<ErrorIcon className={classes.img} />
 			<h1 className={classes.img}>Something went wrong</h1>
 			<span className={classes.describe}>
 				{knownError?.messageError} {knownError?.status}

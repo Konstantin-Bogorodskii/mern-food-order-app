@@ -23,14 +23,14 @@
 }
 
 .link {
-	color: var(--text-primary);
+	color: #020817;
 	padding: 10px;
 }
 
 .link:hover {
-	color: red;
+	color: #f97316;
 }
 
 .link:active {
-	color: darkred;
+	color: #fb6c05;
 }
