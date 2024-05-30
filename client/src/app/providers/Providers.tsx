@@ -1,6 +1,6 @@
 import { ErrorBoundary } from 'react-error-boundary';
 import { Fallback } from '@shared/ui/fallback';
-import { AuthProviderWithNavigate } from '@app/auth';
+import { AuthProviderWithNavigate } from '@app/providers/AuthProviderWithNavigate';
 
 interface Props {
 	readonly children: JSX.Element;
