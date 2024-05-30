@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@shared/ui/button';
 import { useAuth0 } from '@auth0/auth0-react';
+import { UserMenu } from '@widgets/header/ui/userMenu';
 
 export const MainNav: React.FC = () => {
 	const { loginWithRedirect, isAuthenticated } = useAuth0();
@@ -14,7 +15,7 @@ export const MainNav: React.FC = () => {
 						className="font-bold hover:text-orange-500">
 						Order Status
 					</Link>
-					{/* <UsernameMenu /> */}
+					<UserMenu />
 				</>
 			) : (
 				<Button
