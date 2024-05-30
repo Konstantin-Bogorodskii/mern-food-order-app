@@ -10,7 +10,7 @@ export const AppRouter = () => {
 	const router = createBrowserRouter([
 		{
 			path: '/',
-			element: <Layout />,
+			element: <Layout showHero />,
 			errorElement: <Fallback />,
 			children: [
 				{
