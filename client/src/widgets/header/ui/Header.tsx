@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MainNav, MobileNav } from '@/entities/nav';
+import { MainNav, MobileNav } from '@widgets/header/ui/nav';
 
 export const Header: React.FC = () => {
 	return (
@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
 					MernEats.com
 				</Link>
 
-				<div className="md:hidden">
+				<div className="md:hidden h-6">
 					<MobileNav />
 				</div>
 
