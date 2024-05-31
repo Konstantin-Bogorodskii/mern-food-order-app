@@ -5,7 +5,7 @@ interface Props {
 	children: ReactNode;
 }
 
-export const AuthProviderWithNavigate: FC<Props> = ({ children }: Props) => {
+export const AuthProvider: FC<Props> = ({ children }: Props) => {
 	const DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 	const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 	const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
