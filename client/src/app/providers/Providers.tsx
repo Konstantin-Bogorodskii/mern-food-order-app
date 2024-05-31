@@ -1,6 +1,7 @@
 import { ErrorBoundary } from 'react-error-boundary';
 import { Fallback } from '@shared/ui/fallback';
-import { AuthProviderWithNavigate } from '@app/providers/AuthProviderWithNavigate';
+import { AuthProvider } from '@app/providers/AuthProvider';
+import { QueryClientProvider } from '@app/providers/QueryClientProvider';
 
 interface Props {
 	readonly children: JSX.Element;
@@ -9,7 +10,9 @@ interface Props {
 export const Providers: React.FC<Props> = ({ children }) => {
 	return (
 		<ErrorBoundary FallbackComponent={Fallback}>
-			<AuthProviderWithNavigate>{children}</AuthProviderWithNavigate>
+			<QueryClientProvider>
+				<AuthProvider>{children}</AuthProvider>
+			</QueryClientProvider>
 		</ErrorBoundary>
 	);
 };
