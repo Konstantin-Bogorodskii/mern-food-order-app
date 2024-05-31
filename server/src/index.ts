@@ -3,13 +3,16 @@ import cors from 'cors';
 import 'dotenv/config';
 import mongoose from 'mongoose';
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
+import UserRoute from './routes/user-route';
 
 const app = express();
 
 // middleware which converts all API calls body to json format
 app.use(express.json());
+
 app.use(cors());
+
+app.use('/api/user', UserRoute);
 
 const PORT = process.env.PORT || 8080;
 
