@@ -27,7 +27,8 @@
 			"@pages/*": ["src/pages/*"],
 			"@shared/*": ["src/shared/*"],
 			"@widgets/*": ["src/widgets/*"],
-			"@entities/*": ["src/entities/*"]
+			"@entities/*": ["src/entities/*"],
+			"@features/*": ["src/features/*"]
 		},
 
 		"types": ["vite-plugin-svgr/client"]
