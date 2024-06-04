@@ -6,10 +6,12 @@ import { HomePage } from '@pages/homePage';
 
 import { Fallback } from '@shared/ui/fallback';
 
+import { ROOT_PATH } from '@shared/constants';
+
 export const AppRouter = () => {
 	const router = createBrowserRouter([
 		{
-			path: '/',
+			path: ROOT_PATH,
 			element: <Layout showHero />,
 			errorElement: <Fallback />,
 			children: [
