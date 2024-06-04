@@ -3,10 +3,10 @@ import User from '../models/user-model';
 
 const createUser = async (req: Request, res: Response) => {
 	try {
-		const { authId, email } = req.body;
+		const { authId, email } = req.body.user;
 
 		const user = await User.findOne({ authId });
-		if (user) return res.status(200).send();
+		if (user) return res.status(200).send(user);
 
 		const newUser = new User({ authId, email });
 		await newUser.save();
