@@ -1,13 +1,9 @@
-import { FC, ReactNode } from 'react';
 import { Auth0Provider, AppState, User } from '@auth0/auth0-react';
-import { useCreateUser } from '@features/user/api';
+import { useNavigate, Outlet } from 'react-router-dom';
+import { AUTH_CALLBACK_PATH } from '@shared/constants';
 
-interface Props {
-	children: ReactNode;
-}
-
-export const AuthProvider: FC<Props> = ({ children }: Props) => {
-	const { createUser } = useCreateUser();
+export const AuthProvider: React.FC = () => {
+	const navigate = useNavigate();
 
 	const DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 	const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
@@ -18,12 +14,9 @@ export const AuthProvider: FC<Props> = ({ children }: Props) => {
 	}
 
 	const onRedirectCallback = (AppState?: AppState, user?: User) => {
-		if (user?.sub && user?.email) {
-			createUser({
-				authId: user.sub,
-				email: user.email
-			});
-		}
+		console.log('user ==>', user);
+		console.log('AppState ==>', AppState);
+		navigate(AUTH_CALLBACK_PATH);
 	};
 
 	return (
@@ -34,7 +27,7 @@ export const AuthProvider: FC<Props> = ({ children }: Props) => {
 				redirect_uri: REDIRECT_URI
 			}}
 			onRedirectCallback={onRedirectCallback}>
-			{children}
+			<Outlet />
 		</Auth0Provider>
 	);
 };

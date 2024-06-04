@@ -1,1 +1,1 @@
-export { ROOT_PATH } from '@shared/constants/routes';
+export * from '@shared/constants/routes';
