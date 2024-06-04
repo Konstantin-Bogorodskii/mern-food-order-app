@@ -1,11 +1,14 @@
 import { FC, ReactNode } from 'react';
 import { Auth0Provider, AppState, User } from '@auth0/auth0-react';
+import { useCreateUser } from '@features/user/api';
 
 interface Props {
 	children: ReactNode;
 }
 
 export const AuthProvider: FC<Props> = ({ children }: Props) => {
+	const { createUser } = useCreateUser();
+
 	const DOMAIN = import.meta.env.VITE_AUTH_DOMAIN;
 	const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 	const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
@@ -15,8 +18,12 @@ export const AuthProvider: FC<Props> = ({ children }: Props) => {
 	}
 
 	const onRedirectCallback = (AppState?: AppState, user?: User) => {
-		console.log('AppState ==>', AppState);
-		console.log('user ==>', user);
+		if (user?.sub && user?.email) {
+			createUser({
+				authId: user.sub,
+				email: user.email
+			});
+		}
 	};
 
 	return (
